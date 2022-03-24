@@ -1,0 +1,178 @@
+* {
+    font-family: "Montserrat", sans-serif;
+    padding: 0;
+    margin: 0;
+  }
+
+body{    
+  background: black;
+
+}
+header {
+  z-index: 10;
+}
+img{
+  padding-top: 10px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+/* Typeography General*/
+h1 {
+  font-size: 75px;
+  color:rgb(13, 231, 86);
+  margin: 0.5em 0.5em;
+  text-align: center;
+  padding-bottom: 2px;
+  }
+@media only screen and (max-width: 500px) {
+  h1 {
+    font-size: 40px;
+    margin: 2em 4rem 1em;
+    }
+  img{
+    width:100%;
+  }
+  }
+h2 {
+  font-size: 40px;
+  font-style: italic;
+  color:rgb(98, 25, 233);
+  padding-bottom: 5px;
+  border-bottom: 1px solid black;
+}
+p {
+  line-height: 1.6;
+  color:brown;
+}
+
+/* ---- Layout Rules ---- */
+main {
+  margin: 15vh 1em 15vh;
+}
+.mainHead{
+  min-height: 35vh;
+  padding-top: 2.5em;
+  margin-top: 10.5em;
+}
+
+section {
+  position: relative;
+  min-height: 80vh;
+}
+
+/* Header Styles */
+.pageHead {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 5;
+}
+
+/* Footer Styles */
+.pageFooter {
+  background: yellow;
+  padding: 3em;
+  color: blue;
+}
+
+.pageFooter p {
+  color: black;
+  text-align: center;
+  font-size: 2em;
+}
+
+/* Navigation Styles*/
+.navMenu ul {
+  padding-left: 0;
+  margin: 0;
+  text-align: right;
+}
+
+.navMenu li {
+  display: inline-block;
+}
+
+.navMenu li,
+.navMenu .menu__link {
+  padding: 1em;
+  font-weight: bold;
+  text-decoration: none;
+  color: #000;
+  cursor: pointer;
+  transition: ease 0.3s all;
+}
+
+.navMenu li:hover,
+.navMenu .menu__link:hover {
+  background: rgb(102, 59, 59);
+  text-decoration: none;
+}
+
+.navMenu li:hover a,
+.navMenu .menu__link:hover a {
+  color: #fff;
+}
+
+.navMenu .menu__link.active {
+  background-color: #333;
+}
+
+.navMenu .menu__link.active a,
+.navMenu .menu__link.active a:link {
+  color: rgb(136, 203, 171);
+  text-decoration: none;
+}
+
+/* main Container Styles */
+.mainContainer {
+  padding: 1em;
+  text-align: left;
+}
+@media only screen and (max-width: 500px) {
+  .mainHead {
+    margin: auto;
+  }
+  .mainContainer {
+    max-width: 50em;
+    padding: 4em;
+  }
+  .navMenu li,
+  .navMenu .menu__link {
+    display: inline-block;
+  }
+}
+
+/* Section Active Styles */
+/* Note: your-active-class class is applied through javascript. You should update the class here and in the index.html to what you set in your javascript file.  */
+section.active {
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.1) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+section.active .mainContainer::before {
+  opacity: 1;
+  animation: rotate 4s linear 0s infinite forwards;
+}
+
+section.active .mainContainer::after {
+  opacity: 1;
+  animation: rotate 5s linear 0s infinite forwards reverse;
+}
+
+/* Section Active Styles Keyframe Animations */
+@keyframes rotate {
+  from {
+    transform: rotate(0deg) translate(-1em) rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg) translate(-1em) rotate(-360deg);
+  }
+}
+
+
